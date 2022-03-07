@@ -1,0 +1,98 @@
+*{
+    
+    width: 100%;
+    background: url("background\ image.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto;
+    
+    
+}
+section{
+    width: 350px;
+    
+    display: flex;
+    flex-direction: column;
+   margin-top: 170px;
+   background: whitesmoke ;
+   padding: 20px;
+  
+}
+.mainh1{
+    text-align: center;
+    background: whitesmoke;
+}
+form{
+    background: whitesmoke !important;
+}
+section input{
+    display: block;
+    margin-top: 10px;
+    background: whitesmoke !important;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-bottom: 2px solid purple;
+    
+}
+section input:focus{
+    outline: none ;
+}
+
+.passdiv{
+    background: whitesmoke !important;
+    display: flex;
+    align-items: center;
+    width: 250px;
+    
+
+}
+.eyebtn{
+    background: whitesmoke ;
+    border: none;
+}
+.passdiv i{
+    background: whitesmoke ;
+}
+
+
+
+
+p{
+    font-size: 13px;
+   padding: 0 20px;
+    margin: 10px 0 10px 10px;
+    background: whitesmoke;
+    font-weight: bold;
+   
+}
+button{
+    
+    width: 250px;
+    margin: 0 auto;
+}
+
+.mybtn{
+    color: grey;
+    margin-top: 10px;
+    background: aqua !important;
+    color: whitesmoke;
+}
+.signupbtn{
+    background: royalblue !important;
+}
+.profilediv{
+    
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profilediv h3{
+    background: whitesmoke ;
+    padding: 20px;
+}
