@@ -1,7 +1,7 @@
 import React, { useState , useEffect , useRef } from 'react';
 import "./App.css"
 import { Modal, Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { auth, db } from './config/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
@@ -23,6 +23,7 @@ const useKey = (key , cb) => {
     } , [key])
 }
 const Signup = () => {
+    const navigate = useNavigate()
     const handleEnter = () => {
         SignUp()
     }
@@ -35,8 +36,18 @@ const Signup = () => {
     const passValid = () => {
         !showPass ? setShowPass(true) : setShowPass(false)
     }
+   
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const [showSignUp , setShowSignUp] = useState(true)
+    const handleClose = () => 
+    {
+        setShow(false)
+        setShowSignUp(false)
+    };
+    const closeSignUp = () => {
+        
+       navigate("/login")
+    }
 
     const SignUp = () => {
         let { email, password } = state;
@@ -52,6 +63,7 @@ const Signup = () => {
                 console.log(error, 'error')
             })
         setState({ email: "", password: "" })
+        setShowSignUp(false)
 
     }
     return (
@@ -67,7 +79,9 @@ const Signup = () => {
 
             </Modal.Footer>
         </Modal> :
-            <section className='signupdiv'>
+        <Modal show={showSignUp} onHide={closeSignUp}>
+       
+        <Modal.Body><section className='signupdiv'>
                 <h1 className="mainh1">Sign Up</h1>
                 <form>
                     <input
@@ -95,7 +109,15 @@ const Signup = () => {
 
 
 
-            </section>
+            </section></Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" onClick={closeSignUp}>
+                Close
+            </Button>
+
+        </Modal.Footer>
+    </Modal>
+            
     );
 };
 
