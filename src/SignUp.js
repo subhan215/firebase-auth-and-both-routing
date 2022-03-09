@@ -57,31 +57,32 @@ const Signup = () => {
                 console.log(msg, 'success')
                 const handleShow = () => setShow(true);
                 return handleShow()
+                setShowSignUp(false)
 
             })
             .catch((error) => {
                 console.log(error, 'error')
             })
         setState({ email: "", password: "" })
-        setShowSignUp(false)
+        
 
     }
     return (
-        show ? <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Congratulations!</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>You are now registered!</Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+        show ? <Modal show={show} onHide={handleClose} backdrop="static"  keyboard={false}>
+            <Modal.Header closeButton className='whitesmokebg'>
+                <Modal.Title className='modaltitle'>Congratulations!</Modal.Title>
+            </Modal.Header >
+            <Modal.Body className='whitesmokebg modalbody'> <p>You are now registered! </p></Modal.Body>
+            <Modal.Footer className='whitesmokebg'>
+                <Button variant="secondary" onClick={handleClose} className = "closebtn">
                     Close
                 </Button>
 
             </Modal.Footer>
         </Modal> :
-        <Modal show={showSignUp} onHide={closeSignUp}>
+        <Modal show={showSignUp} onHide={closeSignUp} backdrop="static"  keyboard={false}>
        
-        <Modal.Body><section className='signupdiv'>
+        <Modal.Body className = "whitesmokebg"><section className='signupdiv'>
                 <h1 className="mainh1">Sign Up</h1>
                 <form>
                     <input
@@ -110,8 +111,8 @@ const Signup = () => {
 
 
             </section></Modal.Body>
-        <Modal.Footer>
-            <Button variant="secondary" onClick={closeSignUp}>
+        <Modal.Footer className = "whitesmokebg">
+            <Button variant="secondary" onClick={closeSignUp} className = "closebtn">
                 Close
             </Button>
 

@@ -20,6 +20,9 @@ section{
    padding: 20px;
   
 }
+.signupdiv{
+    margin-top: 50px;
+}
 .mainh1{
     text-align: center;
     background: whitesmoke;
@@ -53,6 +56,7 @@ section input:focus{
 .eyebtn{
     background: whitesmoke ;
     border: none;
+    width: 40px;
 }
 .passdiv i{
     background: whitesmoke ;
@@ -95,4 +99,42 @@ button{
 .profilediv h3{
     background: whitesmoke ;
     padding: 20px;
+}
+.whitesmokebg{
+    background: url("white\ smoke\ bg.jpg");
+}
+.closebtn{
+    color: black;
+    font-weight: bold;
+}
+.modaltitle{
+    color: whitesmoke;
+    background:url("white\ smoke\ bg.jpg") ;
+}
+.modalbody p{
+    background: url("white\ smoke\ bg.jpg") ;
+    color: whitesmoke;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 18px;
+}
+@media only screen and (max-width : 400px) {
+    section {
+        width: 100%;
+    }
+    p{
+        padding: 0;
+        margin: 10px 0;
+        text-align : center
+    }
+}
+@media only screen and (max-width : 340px) {
+    button ,section input , .passdiv{
+        width: 100%;
+    }
+    .eyebtn{
+        width: 30px;
+    }
+  
+    
 }

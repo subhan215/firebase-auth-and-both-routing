@@ -26,6 +26,7 @@ const Routing = () => {
                 <Route path='/login' element = {<Login />} />
                 <Route index element = {<Login />} />
                 <Route path='/profile' element = {<PvtRoute />} />
+                <Route path='*' element = {<h1>Error 404! Sorry page not found</h1>} />
             </Routes>
         </div>
     );
